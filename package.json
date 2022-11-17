@@ -1,6 +1,6 @@
 {
   "name": "abi-tools",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "a set of tools of integrations with smart contracts",
   "main": "index.js",
   "bin": {

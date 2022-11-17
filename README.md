@@ -35,6 +35,30 @@ abitools log
 
     coming soon, maybe, got some started but realistically this is a one-off tool for now.
 
+### Example Output
+
+There is color-coding in the console that doesn't show up here.
+```sh
+------------------------------------------------------
+Logging events and functions for: TestToken
+------------------------------------------------------
+Events:
+        Approval(address, address, uint256)
+        Transfer(address, address, uint256)
+Functions:
+        allowance(address, address)
+        approve(address, uint256)
+        balanceOf(address)
+        decimals()
+        decreaseAllowance(address, uint256)
+        increaseAllowance(address, uint256)
+        name()
+        symbol()
+        totalSupply()
+        transfer(address, uint256)
+        transferFrom(address, address, uint256)
+```
+
 ## Description
 
 this CLI will load up your forge.toml to grab your `src` and `out` directory locations.  It will iterate through all files in the src folder, and then grab the abis out of the `out` location.
