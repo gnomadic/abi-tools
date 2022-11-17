@@ -1,0 +1,38 @@
+{
+  "name": "abi-tools",
+  "version": "1.0.0",
+  "description": "a set of tools of integrations with smart contracts",
+  "main": "index.js",
+  "bin": {
+    "@gnomadic/abitools": "bin/abitools",
+    "abitools": "bin/abitools"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.google.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "abi",
+    "smart",
+    "contracts",
+    "emv",
+    "solidity",
+    "forge",
+    "foundry"
+  ],
+  "author": "gn0madic",
+  "license": "MIT",
+  "devDependencies": {
+    "arg": "^5.0.2",
+    "esm": "^3.2.25",
+    "fs": "0.0.1-security",
+    "inquirer": "8.0.1",
+    "toml": "^3.0.0"
+  }
+}
