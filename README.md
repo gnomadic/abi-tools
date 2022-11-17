@@ -1,4 +1,4 @@
-# abi-tools
+# abitools
 
 When writing client applications for smart contracts it's useful to be able to aggregate all the necessary details out of the ABI.  ABIs have a ton of information, and usually we just care about events, functions, and their parameters.  This library provides a simple interface for extracting that information.
 
