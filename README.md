@@ -8,7 +8,7 @@ This is built to work with Foundry - poorly - but it works.
 ## Installation
 
 ```sh
-npm install --save-dev foundy-abi-tools
+npm install --save-dev foundry-abi-tools
 ```
 
 ## Usage

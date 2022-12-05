@@ -14,13 +14,11 @@ export async function loadABI(args) {
     var data = toml.parse(tomldata);
   } catch (e) {
     console.error(
-      "Parsing error on line " +
-        e.line +
-        ", column " +
-        e.column +
-        ": " +
+      "\nCould not load or find foundry.toml file, ensure you are using this tool in the directory where it exists." +
+        "\n\n " +
         e.message
     );
+    return [];
   }
   let srcdir = data.profile.default.src;
   let outdir = data.profile.default.out;
@@ -44,21 +42,21 @@ export async function loadABI(args) {
     let abi = JSON.parse(
       await fsp.readFile(path.join(abiFile, element + ".json"))
     );
-    let events = [];
-    let functions = [];
+
+    let contract = {};
+    contract.name = element;
+    contract.abi = abi.abi;
+    contract.events = [];
+    contract.functions = [];
+
     abi.abi.forEach((element) => {
       if (element.type == "event") {
-        events.push(element);
+        contract.events.push(element);
       } else if (element.type == "function") {
-        functions.push(element);
+        contract.functions.push(element);
       }
     });
-    let contract = {
-      name: element,
-      abi: abi.abi,
-      events: events,
-      functions: functions,
-    };
+
     contracts.push(contract);
   }
 

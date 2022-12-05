@@ -1,5 +1,6 @@
 import arg from "arg";
 import inquirer from "inquirer";
+import { getWagmi } from "./tasks/genWagmi";
 import { loadABI } from "./tasks/loadABI";
 import { logAPI } from "./tasks/logAPI";
 
@@ -37,7 +38,7 @@ async function promptForMissingOptions(options) {
       type: "list",
       name: "job",
       message: "Please choose which job to use",
-      choices: ["log", "codegen"],
+      choices: ["log", "remixgen"],
       default: defaultJob,
     });
   }
@@ -52,13 +53,14 @@ async function promptForMissingOptions(options) {
 export async function cli(args) {
   let options = parseArgumentsIntoOptions(args);
   options = await promptForMissingOptions(options);
-  // console.log(options);
   let contracts = await loadABI(options);
+  // console.log({ options });
   switch (options.job) {
     case "log":
       logAPI(contracts, options);
       break;
-    case "codegen":
+    case "remixgen":
+      getWagmi(contracts, options);
       break;
   }
 }

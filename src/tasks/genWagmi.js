@@ -1,12 +1,18 @@
-export async function logAPI(contracts, args) {
+import { header } from "../templates/wagmi";
+
+export async function getWagmi(contracts, args) {
   contracts.forEach((contract) => {
     console.log(`------------------------------------------------------`);
     console.log(
-      `Logging ${args.events ? "events" : ""} ${
+      `Generating Wagmi JS ${args.events ? "events" : ""} ${
         args.events && args.functions ? "and" : ""
       } ${args.functions ? "functions" : ""} for: ${contract.name}`
     );
     console.log(`------------------------------------------------------`);
+
+    let content = header;
+
+    
 
     if (args.events) {
       console.log(`Events:`);
